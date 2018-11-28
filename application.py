@@ -158,6 +158,16 @@ def showCategoriesJSON():
     return jsonify(Category=[category.serialize for category in categories])
 
 
+@app.route('/catalog.json/<string:category_name>/<string:category_item_title>')
+def showCategoryItemJSON(category_name, category_item_title):
+    """REST end-point to show a category item"""
+    category = session.query(Category).filter_by(name=category_name).one()
+    categoryItem = session.query(CategoryItem).filter_by(
+                                  category_id=category.id,
+                                  title=category_item_title).one()
+    return jsonify(CategoryItem=[categoryItem.serialize])
+
+
 @app.route('/oauth/<provider>', methods=['POST'])
 def login(provider):
     """Login to the system using third party provider (Google)"""
