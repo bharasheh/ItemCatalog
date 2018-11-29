@@ -12,8 +12,6 @@ You need to have git and any browser installed.
 
 Use git to [clone](https://services.github.com/on-demand/github-cli/clone-repo-cli) or download the source code from https://github.com/bharasheh/ItemCatalog.git
 
-## Requirements
-
 Install the requirements for the code by run the command ```$ env2/bin/pip install -r requirements.txt```
 
 ## Database Setup
